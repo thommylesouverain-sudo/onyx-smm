@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --onyx-black: #080808;
+    --onyx-core: #0f0f0f;
+    --onyx-charcoal: #141414;
+    --onyx-obsidian: #1a1a1a;
+
+    --glass-ultra: rgba(255, 255, 255, 0.03);
+    --glass-light: rgba(255, 255, 255, 0.07);
+    --glass-medium: rgba(255, 255, 255, 0.12);
+    --glass-strong: rgba(255, 255, 255, 0.16);
+
+    --silver-chrome: #C8C8C8;
+    --ghost-white: #E8E8E8;
+    --ash-platinum: #888888;
+    --stone-gray: #444444;
+
+    --accent-gold: #E8C97A;
+    --accent-ice: #4CC9F0;
+  }
+
+  body {
+    @apply bg-onyx-black text-ghost-white antialiased font-body;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass-ultra backdrop-blur-xl border border-glass-light rounded-2xl shadow-lg;
+    border-width: 0.5px;
+  }
+
+  .glass-card {
+    @apply bg-glass-light backdrop-blur-[12px] border border-glass-light rounded-xl transition-all duration-200 hover:scale-[1.015] hover:border-glass-medium;
+    border-width: 0.5px;
+  }
+
+  .glass-input {
+    @apply bg-onyx-obsidian border border-stone-gray rounded-xl px-4 py-3 text-ghost-white focus:outline-none focus:border-silver-chrome focus:ring-1 focus:ring-silver-chrome/20 transition-all font-body;
+    border-width: 0.5px;
+  }
+
+  .glass-button {
+    @apply bg-glass-light border border-glass-light rounded-xl px-4 py-3 text-ghost-white font-medium transition-all hover:-translate-y-0.5 hover:bg-glass-medium hover:shadow-[0_0_15px_rgba(255,255,255,0.05)];
+    border-width: 0.5px;
+  }
+}
