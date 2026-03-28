@@ -8,9 +8,12 @@ interface AppLayoutProps {
   children: React.ReactNode;
 }
 
+import { CursorGlow } from "@/components/effects";
+
 export function AppLayout({ children }: AppLayoutProps) {
   return (
-    <div className="flex bg-onyx-black min-h-screen font-body text-ghost-white">
+    <div className="flex bg-onyx-black min-h-screen font-body text-ghost-white relative overflow-hidden">
+      <CursorGlow />
       <Sidebar />
       <div className="flex flex-col flex-1 pl-16">
         <TopBar />

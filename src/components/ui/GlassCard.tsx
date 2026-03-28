@@ -14,10 +14,21 @@ export function GlassCard({
   variant = "light",
   ...props
 }: GlassCardProps) {
+  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <div
+      onMouseMove={handleMouseMove}
       className={cn(
-        "backdrop-blur-[12px] border rounded-xl transition-all duration-200 border-w-[0.5px]",
+        "relative backdrop-blur-[12px] border rounded-xl transition-all duration-200 group overflow-hidden",
         {
           "bg-glass-ultra border-glass-ultra hover:border-glass-light":
             variant === "ultra",
@@ -33,7 +44,18 @@ export function GlassCard({
       style={{ borderWidth: "0.5px" }}
       {...props}
     >
-      {children}
+      {/* Dynamic Hover Glow Effect */}
+      <div
+        className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.08), transparent 40%)`,
+        }}
+      />
+
+      {/* Content wrapper to ensure z-index above glow */}
+      <div className="relative z-10 w-full h-full">
+        {children}
+      </div>
     </div>
   );
 }

@@ -38,9 +38,24 @@ export default function LoginPage() {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-onyx-black overflow-hidden selection:bg-accent-ice/30 selection:text-white">
-      {/* Background Animated Dots */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 animate-[pulse_8s_ease-in-out_infinite]" />
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,var(--accent-ice)_0%,transparent_50%)] opacity-[0.03] blur-3xl scale-150 animate-[pulse_10s_ease-in-out_infinite_alternate]" />
+      {/* Advanced Abstract Background Elements */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent-ice/5 rounded-full blur-[120px] mix-blend-screen animate-[pulse_10s_ease-in-out_infinite]" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent-gold/5 rounded-full blur-[150px] mix-blend-screen animate-[pulse_15s_ease-in-out_infinite_alternate]" />
+
+      {/* Refined Grid & Particles */}
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] opacity-20" />
+
+      {/* Floating 3D-like Orbs */}
+      <motion.div
+        animate={{ y: [-20, 20, -20], rotate: [0, 5, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[20%] right-[20%] w-32 h-32 rounded-full border border-glass-medium bg-glass-ultra backdrop-blur-2xl shadow-[0_0_40px_rgba(255,255,255,0.05)] opacity-50"
+      />
+      <motion.div
+        animate={{ y: [30, -30, 30], rotate: [0, -10, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-[20%] left-[20%] w-24 h-24 rounded-full border border-glass-light bg-glass-ultra backdrop-blur-xl shadow-[0_0_30px_rgba(232,201,122,0.05)] opacity-40"
+      />
 
       <GlassCard
         variant="ultra"

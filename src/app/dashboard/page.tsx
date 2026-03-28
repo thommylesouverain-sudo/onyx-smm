@@ -55,10 +55,20 @@ export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-8 max-w-[1400px] mx-auto w-full">
       {/* Stats Grid */}
+      {/* Decorative Header Sparkles */}
+      <div className="relative mb-4">
+        <h1 className="font-heading text-4xl font-bold text-ghost-white tracking-wide">
+          Kontrol Paneli
+        </h1>
+        <p className="text-ash-platinum mt-1 text-sm">Güncel hesap istatistikleriniz ve son işlemleriniz.</p>
+        <div className="absolute top-0 right-10 w-[200px] h-[50px] bg-gradient-to-r from-transparent via-accent-ice/20 to-transparent blur-[40px] pointer-events-none" />
+      </div>
+
+      {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, i) => (
-          <GlassCard key={i} variant="ultra" className="p-6 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accent-gold/5 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-accent-gold/10 transition-colors" />
+          <GlassCard key={i} variant="ultra" className="p-6 relative overflow-hidden group border-glass-light hover:border-glass-medium transition-all duration-500 shadow-[0_0_15px_rgba(255,255,255,0.02)] hover:shadow-[0_0_25px_rgba(76,201,240,0.05)]">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-accent-gold/5 to-accent-ice/5 rounded-full blur-[40px] -mr-16 -mt-16 group-hover:opacity-100 transition-opacity duration-700 opacity-50" />
             <div className="flex items-center justify-between relative z-10">
               <div className="flex flex-col gap-1">
                 <span className="text-sm font-medium text-ash-platinum">{stat.label}</span>
