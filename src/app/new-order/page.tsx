@@ -5,22 +5,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard, Button, Input } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import {
-  Instagram,
-  Youtube,
-  Twitter,
   Music,
   Send,
   Smartphone,
   CheckCircle2,
   ChevronRight,
-  ArrowLeft
+  ArrowLeft,
+  Camera,
+  Play,
+  MessageCircle
 } from "lucide-react";
 
 const platforms = [
-  { id: "ig", name: "Instagram", icon: Instagram, color: "hover:text-[#E1306C]" },
+  { id: "ig", name: "Instagram", icon: Camera, color: "hover:text-[#E1306C]" },
   { id: "tt", name: "TikTok", icon: Smartphone, color: "hover:text-[#ff0050]" },
-  { id: "yt", name: "YouTube", icon: Youtube, color: "hover:text-[#FF0000]" },
-  { id: "tw", name: "Twitter/X", icon: Twitter, color: "hover:text-[#1DA1F2]" },
+  { id: "yt", name: "YouTube", icon: Play, color: "hover:text-[#FF0000]" },
+  { id: "tw", name: "Twitter/X", icon: MessageCircle, color: "hover:text-[#1DA1F2]" },
   { id: "sp", name: "Spotify", icon: Music, color: "hover:text-[#1DB954]" },
   { id: "tg", name: "Telegram", icon: Send, color: "hover:text-[#0088cc]" },
 ];

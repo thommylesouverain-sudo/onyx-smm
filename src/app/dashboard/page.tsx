@@ -12,10 +12,10 @@ function AnimatedCounter({ value, prefix = "", suffix = "" }: { value: number; p
     const end = value;
     if (start === end) return;
 
-    let totalDuration = 1000;
-    let incrementTime = (totalDuration / end) * 5;
+    const totalDuration = 1000;
+    const incrementTime = (totalDuration / end) * 5;
 
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       start += end / 20;
       if (start >= end) {
         clearInterval(timer);
@@ -101,14 +101,14 @@ export default function DashboardPage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-glass-light/50">
-                  {mockOrders.map((order, i) => (
+                  {mockOrders.map((order) => (
                     <tr key={order.id} className="hover:bg-glass-ultra/50 transition-colors">
                       <td className="px-6 py-4 font-mono text-xs text-ash-platinum">{order.id}</td>
                       <td className="px-6 py-4 text-ghost-white truncate max-w-[200px]">{order.service}</td>
                       <td className="px-6 py-4 text-ash-platinum truncate max-w-[150px]">{order.link}</td>
                       <td className="px-6 py-4 text-ghost-white font-mono text-right">{order.qty.toLocaleString()}</td>
                       <td className="px-6 py-4">
-                        <StatusBadge status={order.status as any} />
+                        <StatusBadge status={order.status as "Pending" | "Active" | "Completed" | "Cancelled" | "Failed"} />
                       </td>
                     </tr>
                   ))}

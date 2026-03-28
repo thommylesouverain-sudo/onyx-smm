@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Bell } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 
 export function TopBar() {
   const { data: session } = useSession();

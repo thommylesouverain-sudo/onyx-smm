@@ -1,16 +1,11 @@
 import { PrismaClient } from '@prisma/client'
 
 const prismaClientSingleton = () => {
-  return new PrismaClient({
-    datasources: {
-      db: {
-        url: process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/onyx_db"
-      }
-    }
-  })
+  return new PrismaClient()
 }
 
 declare global {
+  // eslint-disable-next-line no-var
   var prismaGlobal: undefined | ReturnType<typeof prismaClientSingleton>
 }
 

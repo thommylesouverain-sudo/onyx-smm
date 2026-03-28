@@ -73,7 +73,7 @@ export default function OrdersPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-glass-light/50">
-              {mockOrders.map((order, i) => (
+              {mockOrders.map((order) => (
                 <tr key={order.id} className="hover:bg-glass-ultra transition-colors group">
                   <td className="px-6 py-4 font-mono text-xs text-ash-platinum group-hover:text-ghost-white transition-colors">{order.id}</td>
                   <td className="px-6 py-4 text-ash-platinum text-xs">{order.date}</td>
@@ -87,7 +87,7 @@ export default function OrdersPage() {
                   <td className="px-6 py-4 text-ghost-white font-mono text-right">{order.qty.toLocaleString()}</td>
                   <td className="px-6 py-4 text-accent-gold font-mono text-right font-medium">${order.price}</td>
                   <td className="px-6 py-4">
-                    <StatusBadge status={order.status as any} />
+                    <StatusBadge status={order.status as "Pending" | "Active" | "Completed" | "Cancelled" | "Failed"} />
                   </td>
                 </tr>
               ))}

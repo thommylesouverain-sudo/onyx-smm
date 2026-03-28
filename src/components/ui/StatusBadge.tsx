@@ -57,7 +57,7 @@ export function StatusBadge({ status, className }: StatusBadgeProps) {
       )}
       style={{ borderWidth: "0.5px" }}
     >
-      {config.pulse && (
+      {"pulse" in config && config.pulse && (
         <motion.span
           animate={{ opacity: [1, 0.4, 1] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

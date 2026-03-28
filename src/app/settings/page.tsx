@@ -9,7 +9,7 @@ import { Copy, CheckCircle2, User, Key, Bell, ShieldAlert, Upload } from "lucide
 export default function SettingsPage() {
   const { data: session } = useSession();
   const [copied, setCopied] = useState(false);
-  const [apiKey, setApiKey] = useState("onx_live_9f8d7e6c5b4a3f2d1e0");
+  const apiKey = "onx_live_9f8d7e6c5b4a3f2d1e0";
 
   const [toggles, setToggles] = useState({
     emailNotifs: true,
